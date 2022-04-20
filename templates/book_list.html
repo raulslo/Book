@@ -7,16 +7,12 @@
 <body>
 <div>
     <ul>
-
-        {%for i in book %}
+        {% for book in books %}
         <li>
-            <h2>{{i.title}}</h2>
-            <p>{{i.description }}</p>
-            <img src="{{i.image.url}}" alt="">
-            <p>{{i.author }}</p>
+            <h2><a href="{{ book.id }}/">{{ book.title }}</a></h2>
+            <img src="{{ book.image.url }}" alt="">
         </li>
         {% endfor %}
-
     </ul>
 </div>
 

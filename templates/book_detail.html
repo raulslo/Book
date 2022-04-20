@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>book_detail</title>
+</head>
+<body>
+<div>
+    <h2>Title: {{ book.title }}</h2>
+    <img src="{{ book.image.url }}" alt="">
+    <p>{{ book.description }}</p>
+    <p>Genre: {{ book.genre }}</p>
+    <p>Pages: {{ book.pages }}</p>
+    <p>Created-Date: {{ book.created_date }}</p>
+    <p>Updated-date: {{ book.updated_date }}</p>
+
+</div>
+<div>
+    <h2>Reviews: </h2>
+    <ul>
+        {% for i in book.book_freed.all %}
+        <li>
+            <p>{{ i.text }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
